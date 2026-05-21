@@ -6,12 +6,11 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.MyaccountPage;
 import testbase.BaseClass;
-import utilities.ExcelDataProviders;
+import utilities.JsonDataProviders;
 
 public class TC002_LoginTest extends BaseClass {
 
-	@Test(dataProvider = "LoginDataExcel", dataProviderClass = ExcelDataProviders.class, groups = {"Sanity","Master"})
-
+	@Test(dataProvider = "LoginData", dataProviderClass = JsonDataProviders.class, groups = {"Sanity","Master"})
 	public void test_login(String username, String password, String exp) {
 	    logger.info("**** Starting TC002_LoginTest ****");
 	    logger.info("Executing login test with user: " + username);

@@ -29,7 +29,7 @@ import org.testng.annotations.Parameters;
 public class BaseClass {
 
     protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    public Logger logger = LogManager.getLogger(BaseClass.class); // ✅ initialized at declaration
+    public Logger logger = LogManager.getLogger(BaseClass.class); // âœ… initialized at declaration
     public Properties p;
 
     public static WebDriver getDriver() {

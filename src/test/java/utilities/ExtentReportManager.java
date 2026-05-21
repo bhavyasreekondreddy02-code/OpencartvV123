@@ -65,7 +65,7 @@ public class ExtentReportManager extends BaseClass implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         test.get().log(Status.PASS, result.getName() + " executed successfully");
-        // ❌ No screenshot on success
+        // âŒ No screenshot on success
     }
 
     @Override
@@ -79,7 +79,7 @@ public class ExtentReportManager extends BaseClass implements ITestListener {
         if (result.getThrowable() != null) {
             test.get().log(Status.INFO, result.getThrowable().getMessage());
         }
-        // ✅ Screenshot only on failure
+        // âœ… Screenshot only on failure
         attachScreenshot(result);
     }
 
@@ -94,7 +94,7 @@ public class ExtentReportManager extends BaseClass implements ITestListener {
         if (result.getThrowable() != null) {
             test.get().log(Status.INFO, result.getThrowable().getMessage());
         }
-        // ❌ No screenshot on skipped
+        // âŒ No screenshot on skipped
     }
 
     @Override
@@ -112,7 +112,7 @@ public class ExtentReportManager extends BaseClass implements ITestListener {
 
     private void attachScreenshot(ITestResult result) {
         try {
-            // ✅ Use active driver from BaseClass
+            // âœ… Use active driver from BaseClass
             String imgPath = captureScreen(result.getName());
             if (imgPath != null) {
                 test.get().addScreenCaptureFromPath(imgPath);
@@ -152,4 +152,4 @@ public class ExtentReportManager extends BaseClass implements ITestListener {
         }
         */
 
-    
+        
