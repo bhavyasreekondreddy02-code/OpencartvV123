@@ -36,18 +36,19 @@ public class CartPage extends BasePage {
     }
 
     public boolean isProductInCart(String productName) {
-        if (isCartEmpty()) return false;
+    if (isCartEmpty()) return false;
 
-        waitHelper.waitForPresence(By.cssSelector("#cart .dropdown-menu td a"));
-        for (WebElement product : cartProducts) {
-            String actualName = product.getText().trim();
-            System.out.println("Cart contains: " + actualName);
+    waitHelper.waitForPresence(By.cssSelector("#cart .dropdown-menu td a"));
+    for (WebElement product : cartProducts) {
+        String actualName = product.getText().trim();
+        System.out.println("Cart contains: " + actualName);
 
-            // Flexible match: case-insensitive contains
-            if (actualName.toLowerCase().contains(productName.toLowerCase())) {
-                return true;
-            }
+        // Flexible match: case-insensitive contains
+        if (actualName.toLowerCase().contains(productName.toLowerCase())) {
+            return true;
         }
-        return false;
     }
+    return false;
+}
+
 }
